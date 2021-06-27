@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color flipper</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .head {
+            width: 100%;
+            height: 100px;
+            background: #000;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            /* position:sticky;
+            top: 12px; */
+        }
+
+        .item {
+            width: 100%;
+            height: 585px;
+            /* background-color: chocolate; */
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-direction: column;
+        }
+
+        button {
+            padding: 12px;
+            /* border: 2px solid #000; */
+            font-size: 1.7rem;
+            border-radius: 12px;
+            background: transparent;
+
+        }
+    </style>
+</head>
+
+<body>
+    <section class="head">
+        <h1 class="textc">Color flipper</h1>
+        <h3>Jay Beniwal</h3>
+    </section>
+    <div class="item" id="items">
+        <h1 id="back_col" style="text-align: center;">click to change background </h1>
+        <button id="btn">click me</button>
+    </div>
+
+
+
+
+
+
+    <script>
+        const btn = document.getElementById('btn');
+        const items = document.getElementById('items');
+        const colors = ['#fb9300', '#064420','#6b011f','#ffd880','#f54748', '#0a81ab', '#0a81ab','#fff5b7','#ac66cc','#005f99','#4a1c40','#ffc93c'];
+        const text =document.getElementById('back_col');
+        const textc=document.querySelector('.textc');
+
+        // console.log(a);
+        const background = () => {
+            const a = Math.floor(Math.random() * 11);
+            text.innerHTML=`background:${colors[a]}`;
+            textc.style.color=colors[a];
+
+            items.style.background=colors[a];
+            // console.log(a);
+
+
+
+        }
+        btn.addEventListener('click', background);
+
+
+
+    </script>
+</body>
+
+</html>
